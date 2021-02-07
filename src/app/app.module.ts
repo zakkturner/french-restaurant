@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroComponent } from './hero/hero.component';
 import { HeaderComponent } from './header/header.component';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroComponent,
-    HeaderComponent
+    HeaderComponent,
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,

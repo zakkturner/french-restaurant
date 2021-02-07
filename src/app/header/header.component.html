@@ -4,30 +4,22 @@
       <h3 class="logo-text">l'Éclipse</h3>
     </div>
     <ul class="links">
-      <li class="item">
-        <a href="#" class="link">Home</a>
-      </li>
-      <li class="item">
-        <a href="#" class="link">Menu</a>
-      </li>
-      <li class="item">
-        <a href="#" class="link">Reservations</a>
-      </li>
-      <li class="item">
-        <a href="#" class="link">About Us</a>
-      </li>
-      <li class="item">
-        <a href="#" class="link">Gallery</a>
-      </li>
-      <li class="item">
-        <a href="#" class="link"> Contacts</a>
+      <li
+        class="item"
+        (mouseenter)="hover(linkItem)"
+        (mouseleave)="unHover(linkItem)"
+        *ngFor="let link of links"
+      >
+        <a href="link.href" id="item" class="link" #linkItem>{{
+          link.title
+        }}</a>
       </li>
     </ul>
     <div class="hamburger">
-      <svg viewBox="0 0 100 80" width="40" height="40">
-        <rect width="100" height="20"></rect>
-        <rect y="30" width="100" height="20"></rect>
-        <rect y="60" width="100" height="20"></rect>
+      <svg viewBox="0 0 100 80" width="40" height="20">
+        <rect width="100" height="10" stroke="#fff" fill="#fff"></rect>
+        <rect y="30" width="100" height="10" stroke="#fff" fill="#fff"></rect>
+        <rect y="60" width="100" height="10" stroke="#fff" fill="#fff"></rect>
       </svg>
     </div>
   </nav>
