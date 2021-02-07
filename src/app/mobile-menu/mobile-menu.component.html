@@ -1,5 +1,5 @@
-<section class="mobile-menu">
-  <div class="overlay">
+<section class="mobile-menu" #menu>
+  <div class="overlay" #overlay>
     <div class="container">
       <div class="close-btn" (click)="closeMenu()">
         <svg
@@ -29,7 +29,7 @@
           />
         </svg>
       </div>
-      <div class="grid">
+      <div class="grid" #grid>
         <div class="title-container">
           <h3 class="title">l'Éclipse</h3>
         </div>
