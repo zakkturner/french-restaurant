@@ -6,13 +6,15 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { gsap } from 'gsap';
+import { MenuService } from '../menu.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  constructor(public menuService: MenuService) {}
+  @ViewChild('ham') ham: ElementRef;
 
   links = [
     {
@@ -40,6 +42,11 @@ export class HeaderComponent implements OnInit {
       href: '/contact',
     },
   ];
+
+  public menuActive() {
+    this.menuService.showMenu = true;
+    console.log(this.menuService.showMenu);
+  }
 
   public hover(linkItem) {
     console.log('entered');

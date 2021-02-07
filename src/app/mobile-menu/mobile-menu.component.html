@@ -1,4 +1,4 @@
-<section class="mobile-menu" #menu>
+<section class="mobile-menu" #menu *ngIf="menuTrigger">
   <div class="overlay" #overlay>
     <div class="container">
       <div class="close-btn" (click)="closeMenu()">

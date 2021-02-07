@@ -1,14 +1,25 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NONE_TYPE } from '@angular/compiler';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  OnChanges,
+} from '@angular/core';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+
 gsap.registerPlugin(DrawSVGPlugin);
+
+import { MenuService } from '../menu.service';
+
 @Component({
   selector: 'app-mobile-menu',
   templateUrl: './mobile-menu.component.html',
   styleUrls: ['./mobile-menu.component.scss'],
 })
 export class MobileMenuComponent implements OnInit {
-  constructor() {}
+  constructor(public menuService: MenuService) {}
   @ViewChild('line1') line1Ref: ElementRef;
   @ViewChild('line2') line2Ref: ElementRef;
   @ViewChild('overlay') overlay: ElementRef;
@@ -40,6 +51,19 @@ export class MobileMenuComponent implements OnInit {
       href: '/contact',
     },
   ];
+
+  menuTrigger: void;
+
+  openMenu() {
+    const tl = gsap.timeline();
+
+    if (this.menuService.showMenu === true) {
+      console.log('working');
+      console.log(this.grid);
+    } else {
+      console.log('damn');
+    }
+  }
 
   closeMenu() {
     const tl = gsap.timeline();
@@ -98,5 +122,7 @@ export class MobileMenuComponent implements OnInit {
     tl.play();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.menuTrigger = this.openMenu();
+  }
 }
